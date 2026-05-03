@@ -1,21 +1,20 @@
 package dao;
 import java.sql.Connection;
 import java.sql.DriverManager;
-
 public class DBConnection {
     public static Connection getConnection() {
         Connection con = null;
         try {
-            Class.forName("oracle.jdbc.driver.OracleDriver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection(
-                "jdbc:oracle:thin:@localhost:1521:xe",
-                "system",
-                "root123"   // ← Did you change this?
+                "jdbc:mysql://sql12.freesqldatabase.com:3306/sql12825007",
+                "sql12825007",
+                "7dYGDgL1Jb"
             );
             System.out.println("Connected ✅");
         } catch (Exception e) {
             System.out.println("❌ DB Connection Failed!");
-            System.out.println("Reason: " + e.getMessage()); // ← ADD THIS
+            System.out.println("Reason: " + e.getMessage());
             e.printStackTrace();
         }
         return con;

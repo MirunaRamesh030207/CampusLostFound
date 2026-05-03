@@ -21,7 +21,7 @@ public class ItemDAO {
             String sql = "INSERT INTO items "
                        + "(user_id, type, category, description, location, "
                        + "date_posted, status, image_name, item_name) "
-                       + "VALUES (?, ?, ?, ?, ?, TO_DATE(?, 'YYYY-MM-DD'), ?, ?, ?)";
+                       + "VALUES (?, ?, ?, ?, ?, STR_TO_DATE(?, '%Y-%m-%d'), ?, ?, ?)";
 
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setInt(1,    item.getUserId());
