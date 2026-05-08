@@ -63,8 +63,8 @@ A web-based Lost and Found management system built for college campuses, allowin
 ```java
    con = DriverManager.getConnection(
        "jdbc:mysql://YOUR_HOST:3306/YOUR_DB",
-       "YOUR_USERNAME",
-       "YOUR_PASSWORD"
+       "#USERNAME",
+       "#PASSWORD"
    );
 ```
 
@@ -160,4 +160,4 @@ http://localhost:8081/CampusLostFoundWebproject/index.jsp
 
 ## 📄 License
 
-This project is for educational purposes only.
+This project is for all purposes.
