@@ -7,9 +7,9 @@ public class DBConnection {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection(
-                "jdbc:mysql://sql12.freesqldatabase.com:3306/sql12825007",
-                "sql12825007",
-                "7dYGDgL1Jb"
+                "jdbc:mysql://sql12.freesqldatabase.com:3306/sql12825007",//host_link
+                "sql12825007", //user_
+                "7dYGDgL1Jb" //password
             );
             System.out.println("Connected ✅");
         } catch (Exception e) {
