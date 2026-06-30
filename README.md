@@ -1,163 +1,299 @@
-# 🎒 Campus Lost & Found Web Application
+![Java](https://img.shields.io/badge/Java-21-orange)
+![JSP](https://img.shields.io/badge/JSP-Web_App-blue)
+![Servlet](https://img.shields.io/badge/Servlet-Jakarta-red)
+![MySQL](https://img.shields.io/badge/MySQL-Database-blue)
+![Maven](https://img.shields.io/badge/Maven-Build-red)
+![License](https://img.shields.io/badge/License-Educational-green)
+🎒 Campus Lost & Found System
 
-A web-based Lost and Found management system built for college campuses, allowing students to report lost items, post found items, and claim them back efficiently.
+A **Java-based Full Stack Web Application** developed to simplify the process of reporting, tracking, and reclaiming lost items within a college campus. The application enables students to post lost or found items, search for belongings, submit claims, and manage reports through a simple and user-friendly interface.
+
+This project was built to strengthen my understanding of **Java Web Development**, **Database Management**, and the **MVC architecture** using JSP, Servlets, JDBC, and MySQL.
+
+---
+🚀 Project Overview
+
+Losing personal belongings on campus is a common problem. Traditional notice boards and social media groups are often inefficient for tracking lost and found items.
+
+The **Campus Lost & Found System** provides a centralized platform where students can:
+
+- Report lost items
+- Post found items
+- Search available items
+- Claim recovered belongings
+- Contact item owners
+- Manage reports efficiently
 
 ---
 
-## 🚀 Features
+✨ Features
 
-- 📝 User Registration & Login
-- 📦 Post Lost or Found Items
-- 🔍 Search and Browse Items
-- ✅ Claim & Resolve Items
+- 👤 User Registration & Login
+- 📦 Report Lost Items
+- 🎒 Post Found Items
+- 🔍 Search & Browse Items
+- ✅ Claim Lost/Found Items
 - 🗑️ Delete Your Own Posts
-- 📊 Dashboard with Stats
-- 📱 Responsive UI
+- 📊 Dashboard with Statistics
+- 📱 Responsive User Interface
+- 🔒 Secure Database Connectivity
 
 ---
 
-## 🛠️ Tech Stack
+🏗️ System Architecture
+
+```
+Presentation Layer
+(JSP + HTML + CSS + JavaScript)
+            │
+            ▼
+Business Logic
+(Java Servlets)
+            │
+            ▼
+Data Access Layer
+(JDBC + DAO Classes)
+            │
+            ▼
+MySQL Database
+```
+
+---
+
+🛠️ Tech Stack
 
 | Layer | Technology |
-|-------|-----------|
+|--------|------------|
 | Frontend | JSP, HTML, CSS, JavaScript |
 | Backend | Java Servlets |
-| Database | MySQL (FreeSQLDatabase.com) |
-| Server | Apache Tomcat 10.1 |
+| Database | MySQL |
+| Database Connectivity | JDBC |
 | Build Tool | Maven |
-| IDE | Eclipse |
+| Server | Apache Tomcat 10.1 |
+| IDE | Eclipse IDE |
 
 ---
 
-## 🗄️ Database Tables
+📂 Project Structure
 
-- **users** — Stores registered student details
-- **items** — Stores lost/found item posts
-- **claims** — Stores item claim requests
-- **users1** — Additional user data
+```
+CampusLostFound
+│
+├── src
+│   └── main
+│       ├── java
+│       │   ├── dao
+│       │   ├── model
+│       │   └── servlet
+│       │
+│       ├── webapp
+│       │   ├── css
+│       │   ├── images
+│       │   ├── js
+│       │   ├── WEB-INF
+│       │   └── *.jsp
+│
+├── screenshots
+├── pom.xml
+├── .gitignore
+└── README.md
+```
 
 ---
 
-## ⚙️ Setup Instructions
+🗄️ Database Design
 
-### Prerequisites
+| Table | Description |
+|--------|-------------|
+| users | Stores registered student information |
+| items | Stores lost and found item details |
+| claims | Stores claim requests submitted by students |
+| users1 | Stores additional user records |
+
+---
+
+⚙️ Installation Guide
+
+Prerequisites
+
 - Java 21
-- Apache Tomcat 10.1
 - Eclipse IDE
-- MySQL (or use FreeSQLDatabase.com)
+- Apache Tomcat 10.1
+- MySQL Server
+- Maven
 
-### Steps
+---
 
-1. **Clone the repository**
+Step 1 - Clone the Repository
+
 ```bash
-   git clone https://github.com/MirunaRamesh030207/CampusLostFound.git
+git clone https://github.com/MirunaRamesh030207/CampusLostFound.git
 ```
 
-2. **Import into Eclipse**
-   - File → Import → Maven → Existing Maven Project
-   - Select the cloned folder
+---
 
-3. **Configure Database**
-   - Open `src/main/java/dao/DBConnection.java`
-   - Update with your MySQL credentials:
+Step 2 - Import into Eclipse
+
+```
+File
+   ↓
+Import
+   ↓
+Existing Maven Project
+```
+
+Select the cloned project.
+
+---
+
+Step 3 - Configure Database
+
+Open
+
+```
+src/main/java/dao/DBConnection.java
+```
+
+Update the database connection:
+
 ```java
-   con = DriverManager.getConnection(
-       "jdbc:mysql://YOUR_HOST:3306/YOUR_DB",
-       "#USERNAME",
-       "#PASSWORD"
-   );
+DriverManager.getConnection(
+    "jdbc:mysql://YOUR_HOST:3306/YOUR_DATABASE",
+    "USERNAME",
+    "PASSWORD"
+);
 ```
 
-4. **Create Database Tables**
-```sql
-   CREATE TABLE users (
-       USER_ID INT PRIMARY KEY AUTO_INCREMENT,
-       NAME VARCHAR(100),
-       ROLL_NUMBER VARCHAR(20),
-       CONTACT VARCHAR(15),
-       DEPARTMENT VARCHAR(50),
-       EMAIL VARCHAR(100),
-       PASSWORD VARCHAR(100)
-   );
+---
 
-   CREATE TABLE items (
-       ITEM_ID INT PRIMARY KEY AUTO_INCREMENT,
-       USER_ID INT,
-       TYPE VARCHAR(10),
-       CATEGORY VARCHAR(50),
-       DESCRIPTION VARCHAR(500),
-       LOCATION VARCHAR(100),
-       DATE_POSTED DATE,
-       STATUS VARCHAR(10),
-       IMAGE_NAME VARCHAR(200),
-       ITEM_NAME VARCHAR(200)
-   );
+Step 4 - Create Database
 
-   CREATE TABLE claims (
-       CLAIM_ID INT PRIMARY KEY AUTO_INCREMENT,
-       ITEM_ID INT,
-       CLAIMED_BY INT,
-       CLAIM_DATE DATE,
-       VERIFIED TINYINT(1)
-   );
+Create a MySQL database and execute the SQL script included in this repository (or create the required tables manually).
 
-   CREATE TABLE users1 (
-       ID INT PRIMARY KEY AUTO_INCREMENT,
-       NAME VARCHAR(100),
-       ROLLNUMBER VARCHAR(50),
-       CONTACT VARCHAR(50),
-       DEPARTMENT VARCHAR(50)
-   );
+Required tables:
+
+- users
+- items
+- claims
+- users1
+
+---
+
+Step 5 - Run the Project
+
+Right Click Project
+
+```
+Run As
+      ↓
+Run on Server
 ```
 
-5. **Add MySQL JAR**
-   - Download `mysql-connector-j-8.0.33.jar`
-   - Place in `src/main/webapp/WEB-INF/lib/`
+Select
 
-6. **Run on Server**
-   - Right click project → Run As → Run on Server
-   - Select Apache Tomcat 10.1
+```
+Apache Tomcat 10.1
+```
 
-7. **Access the app**
+Open
+
+```
 http://localhost:8081/CampusLostFoundWebproject/index.jsp
+```
 
 ---
 
-## 📸 Screenshots
+📸 Application Screenshots
 
-### 🏠 Home Page (Before Register)
-![Home Page](home_page%5Bbefore%20register%5D.png)
+## 🏠 Home Page
 
-### 🏠 Home Page (After Registration)
-![Home After](home_page%5Bafter%20registration%5D.png)
-
-### 🔐 Login Page
-![Login](loginpage.png)
-
-### 🆕 Create Account
-![Create Account](create_your_account.png)
-
-### 📦 Post Found Item
-![Post Found Item](post_founditem.png)
-
-### ❗ Report Lost Item
-![Report Lost Item](report_lostitem.png)
-
-### 📤 Report Submission
-![Report Submission](report_submission.png)
-
-### 📞 Contact Owner
-![Contact Owner](contact_owner.png)
-
-
-
-## 👩‍💻 Developer
-
-**Miruna Ramesh**
-- GitHub: [@MirunaRamesh030207](https://github.com/MirunaRamesh030207)
+<img src="screenshots/home.png" width="800">
 
 ---
 
-## 📄 License
+## 🔐 Login Page
 
-This project is for all purposes.
+<img src="screenshots/login.png" width="800">
+
+---
+
+## 📝 Create Account
+
+<img src="screenshots/create-account.png" width="800">
+
+---
+
+## 📦 Post Found Item
+
+<img src="screenshots/post-found.png" width="800">
+
+---
+
+## ❗ Report Lost Item
+
+<img src="screenshots/report-lost.png" width="800">
+
+---
+
+## 📤 Report Submission
+
+<img src="screenshots/report-submission.png" width="800">
+
+---
+
+## 📞 Contact Owner
+
+<img src="screenshots/contact-owner.png" width="800">
+
+---
+
+🎯 Learning Outcomes
+
+Through this project, I gained hands-on experience in:
+
+- Java Web Development
+- MVC Architecture
+- JSP & Servlets
+- JDBC Database Connectivity
+- MySQL Database Design
+- CRUD Operations
+- Session Management
+- Maven Project Structure
+- Git & GitHub Version Control
+
+---
+
+🚀 Future Enhancements
+
+- 📧 Email Notifications
+- 🔔 Real-time Claim Updates
+- 📱 Mobile Responsive Improvements
+- ☁️ Cloud Deployment
+- 🔍 Advanced Search Filters
+- 🤖 AI-based Lost Item Recommendation
+
+---
+
+👩‍💻 Developer
+
+Miruna Ramesh
+
+Aspiring Full Stack Java Developer
+
+GitHub:
+https://github.com/MirunaRamesh030207
+
+LinkedIn:
+https://www.linkedin.com/in/miruna-ramesh-780902326/
+
+---
+
+# 📄 License
+
+This project has been developed for educational and portfolio purposes.
+
+Feel free to explore the source code and use it for learning.
+
+---
+
+If you found this project helpful, consider giving this repository a Star⭐ .
