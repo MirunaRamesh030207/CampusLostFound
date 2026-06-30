@@ -4,6 +4,7 @@
 ![MySQL](https://img.shields.io/badge/MySQL-Database-blue)
 ![Maven](https://img.shields.io/badge/Maven-Build-red)
 ![License](https://img.shields.io/badge/License-Educational-green)
+
 🎒 Campus Lost & Found System
 
 A **Java-based Full Stack Web Application** developed to simplify the process of reporting, tracking, and reclaiming lost items within a college campus. The application enables students to post lost or found items, search for belongings, submit claims, and manage reports through a simple and user-friendly interface.
