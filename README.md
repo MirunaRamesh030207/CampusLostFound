@@ -208,43 +208,43 @@ http://localhost:8081/CampusLostFoundWebproject/index.jsp
 
 ## 🏠 Home Page
 
-<img src="screenshots/home.png" width="800">
+<img src="screenshots/home_page[after registration].png" width="800">
 
 ---
 
 ## 🔐 Login Page
 
-<img src="screenshots/login.png" width="800">
+<img src="screenshots/loginpage.png" width="800">
 
 ---
 
 ## 📝 Create Account
 
-<img src="screenshots/create-account.png" width="800">
+<img src="screenshots/create_your_account.png" width="800">
 
 ---
 
 ## 📦 Post Found Item
 
-<img src="screenshots/post-found.png" width="800">
+<img src="screenshots/post_founditem.png" width="800">
 
 ---
 
 ## ❗ Report Lost Item
 
-<img src="screenshots/report-lost.png" width="800">
+<img src="screenshots/report_lostitem.png" width="800">
 
 ---
 
 ## 📤 Report Submission
 
-<img src="screenshots/report-submission.png" width="800">
+<img src="screenshots/report_submission.png" width="800">
 
 ---
 
 ## 📞 Contact Owner
 
-<img src="screenshots/contact-owner.png" width="800">
+<img src="screenshots/contact_owner (2).png" width="800">
 
 ---
 
